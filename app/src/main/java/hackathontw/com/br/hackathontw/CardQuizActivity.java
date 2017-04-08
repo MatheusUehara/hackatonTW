@@ -37,12 +37,31 @@ public class CardQuizActivity extends AppCompatActivity {
             public void onLeftCardExit(Object o) {
                 mCardList.remove(0);
                 mAdapter.notifyDataSetChanged();
+                Card card = (Card) o;
+                FeedbackDialog dialog;
+                if(card.getAnswer()){
+                    dialog = new FeedbackDialog(CardQuizActivity.this, false);
+                    dialog.show();
+                }else{
+                    dialog = new FeedbackDialog(CardQuizActivity.this, true);
+                    dialog.show();
+                }
+
             }
 
             @Override
             public void onRightCardExit(Object o) {
                 mCardList.remove(0);
                 mAdapter.notifyDataSetChanged();
+                Card card = (Card) o;
+                FeedbackDialog dialog;
+                if(card.getAnswer()){
+                    dialog = new FeedbackDialog(CardQuizActivity.this, true);
+                    dialog.show();
+                }else{
+                    dialog = new FeedbackDialog(CardQuizActivity.this, false);
+                    dialog.show();
+                }
             }
 
             @Override
@@ -72,10 +91,10 @@ public class CardQuizActivity extends AppCompatActivity {
 
     private void populateCardList() {
         mCardList = new ArrayList<>();
-        mCardList.add(new Card(R.drawable.card1));
-        mCardList.add(new Card(R.drawable.card2));
-        mCardList.add(new Card(R.drawable.card3));
-        mCardList.add(new Card(R.drawable.card4));
-        mCardList.add(new Card(R.drawable.card5));
+        mCardList.add(new Card(R.drawable.card1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim aliquam lectus nec aliquet. Morbi sagittis auctor nibh, dapibus suscipit nisl interdum nec. Phasellus et sapien ut turpis luctus venenatis vulputate vel ex.", true));
+        mCardList.add(new Card(R.drawable.card2, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim aliquam lectus nec aliquet. Morbi sagittis auctor nibh, dapibus suscipit nisl interdum nec. Phasellus et sapien ut turpis luctus venenatis vulputate vel ex.", false));
+        mCardList.add(new Card(R.drawable.card3, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim aliquam lectus nec aliquet. Morbi sagittis auctor nibh, dapibus suscipit nisl interdum nec. Phasellus et sapien ut turpis luctus venenatis vulputate vel ex.", true));
+        mCardList.add(new Card(R.drawable.card4, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim aliquam lectus nec aliquet. Morbi sagittis auctor nibh, dapibus suscipit nisl interdum nec. Phasellus et sapien ut turpis luctus venenatis vulputate vel ex.", false));
+        mCardList.add(new Card(R.drawable.card5, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim aliquam lectus nec aliquet. Morbi sagittis auctor nibh, dapibus suscipit nisl interdum nec. Phasellus et sapien ut turpis luctus venenatis vulputate vel ex.", true));
     }
 }
