@@ -66,13 +66,24 @@ public class HistoryActivity extends Activity
 //        });
 
 
-        Button showFeedbackDialog = (Button) findViewById(R.id.btnStart);
-        showFeedbackDialog.setOnClickListener(new View.OnClickListener() {
+//        Button showFeedbackDialog = (Button) findViewById(R.id.btnStart);
+//        showFeedbackDialog.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View arg0) {
+//
+//                FeedbackDialog dialog = new FeedbackDialog(HistoryActivity.this, true);
+//                dialog.show();
+//            }
+//        });
+
+        Button endStageDialog = (Button) findViewById(R.id.btnStart);
+        endStageDialog.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
 
-                FeedbackDialog dialog = new FeedbackDialog(HistoryActivity.this, true);
+                EndStageDialog dialog = new EndStageDialog(HistoryActivity.this);
                 dialog.show();
             }
         });

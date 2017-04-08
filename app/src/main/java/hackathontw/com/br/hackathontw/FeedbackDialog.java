@@ -52,8 +52,6 @@ public class FeedbackDialog extends Dialog {
                 FeedbackDialog.this.dismiss();
             }
         });
-        //dialog.getWindow().setBackgroundDrawableResource(R.color.colorCorrectAnswer);
-        //dialog.getWindow().setBackgroundDrawableResource(R.color.colorPrimary);
 
         this.setCancelable(false);
     }
