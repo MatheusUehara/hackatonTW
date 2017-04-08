@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
@@ -55,6 +56,7 @@ public class CardAdapter extends BaseAdapter {
             viewHolder = new ViewHolder();
             viewHolder.background = (FrameLayout) view.findViewById(R.id.background);
             viewHolder.card = (ImageView) view.findViewById(R.id.card_image);
+            viewHolder.card_text = (TextView) view.findViewById(R.id.card_text);
             view.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) convertView.getTag();
@@ -62,11 +64,14 @@ public class CardAdapter extends BaseAdapter {
 
         Glide.with(mContext).load(mList.get(position).getResDrawableCard()).into(viewHolder.card);
 
+        viewHolder.card_text.setText(mList.get(position).getText());
+
         return view;
     }
 
     public class ViewHolder{
         public FrameLayout background;
         public ImageView card;
+        public TextView card_text;
     }
 }
