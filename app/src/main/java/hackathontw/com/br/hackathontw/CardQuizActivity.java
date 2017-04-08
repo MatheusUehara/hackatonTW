@@ -38,8 +38,13 @@ public class CardQuizActivity extends AppCompatActivity {
                 mCardList.remove(0);
                 mAdapter.notifyDataSetChanged();
                 Card card = (Card) o;
+                FeedbackDialog dialog;
                 if(card.getAnswer()){
-                    //show dialog
+                    dialog = new FeedbackDialog(CardQuizActivity.this, false);
+                    dialog.show();
+                }else{
+                    dialog = new FeedbackDialog(CardQuizActivity.this, true);
+                    dialog.show();
                 }
 
             }
@@ -49,8 +54,13 @@ public class CardQuizActivity extends AppCompatActivity {
                 mCardList.remove(0);
                 mAdapter.notifyDataSetChanged();
                 Card card = (Card) o;
+                FeedbackDialog dialog;
                 if(card.getAnswer()){
-                    //show dialog
+                    dialog = new FeedbackDialog(CardQuizActivity.this, true);
+                    dialog.show();
+                }else{
+                    dialog = new FeedbackDialog(CardQuizActivity.this, false);
+                    dialog.show();
                 }
             }
 

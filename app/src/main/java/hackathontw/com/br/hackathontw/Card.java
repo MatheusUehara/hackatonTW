@@ -12,7 +12,7 @@ public class Card {
     public Card(int resDrawableCard, String text, boolean answer){
         mResDrawableCard = resDrawableCard;
         mText = text;
-        mAnswer = answer;
+        mAnswer =  answer;
     }
 
     public int getResDrawableCard(){
