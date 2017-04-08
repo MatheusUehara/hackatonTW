@@ -53,29 +53,7 @@ public class HistoryActivity extends Activity
             @Override
             public void onClick(View arg0) {
 
-//                final Dialog dialog = new Dialog(HistoryActivity.this);
-//                dialog.setContentView(R.layout.feedback_dialog);
-//                dialog.setTitle("Title...");
-//
-//                ImageView image = (ImageView) dialog.findViewById(R.id.image);
-//                image.setImageResource(R.drawable.card1);
-//
-//                TextView content = (TextView) dialog.findViewById(R.id.content);
-//                content.setText("lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum.");
-//
-//                Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
-//                dialogButton.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        dialog.dismiss();
-//                    }
-//                });
-//                //dialog.getWindow().setBackgroundDrawableResource(R.color.colorCorrectAnswer);
-//                //dialog.getWindow().setBackgroundDrawableResource(R.color.colorPrimary);
-//                dialog.setCancelable(false);
-//                dialog.show();
-
-                FeedbackDialog dialog = new FeedbackDialog(HistoryActivity.this, true);
+                FeedbackDialog dialog = new FeedbackDialog(HistoryActivity.this, false);
                 dialog.show();
             }
         });
