@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,8 +20,8 @@ import hackathontw.com.br.hackathontw.SharedPrefManager;
  * Created by GilsonDeOliveira on 08/04/2017.
  */
 
-public class EndStageDialog extends Dialog {
-
+public class EndStageDialog extends Dialog
+{
     public EndStageDialog(final Context context, int starts, final Integer level)
     {
         super(context);
@@ -35,7 +33,7 @@ public class EndStageDialog extends Dialog {
         final ImageView stars = (ImageView) findViewById(R.id.imgFstStar);
         TextView titulo = (TextView) findViewById(R.id.customTitle);
 
-        if ( score == 0){
+        if (score == 0){
             titulo.setText(context.getResources().getString(R.string.end_stage_fail));
             stars.setImageResource(R.drawable.icone_nop);
         }else if ( score == 1){
@@ -45,23 +43,6 @@ public class EndStageDialog extends Dialog {
         }else if ( score == 3) {
             stars.setImageResource(R.drawable.three_stars);
         }
-
-        Level levelAtual = Session.getUsuarioLogado().getLevels().get(level - 1);
-        Level proximoLevel = Session.getUsuarioLogado().getLevels().get(level);
-
-        Log.d("ATUAL SCORE", levelAtual.getScore() +" vai virar " + score );
-        if (score > levelAtual.getScore() ) {
-            levelAtual.setScore(score);
-            Session.getUsuarioLogado().getLevels().set(level - 1, levelAtual);
-        }
-
-        //Verifica se o próximo nível está desbloqueado para poder modifica-lo
-        if (proximoLevel.getLocked() && score > 0) {
-            proximoLevel.setLocked(false);
-            Session.getUsuarioLogado().getLevels().set(level, proximoLevel);
-        }
-
-        SharedPrefManager.getInstance(getContext()).saveUserInSharedPref(Session.getUsuarioLogado());
 
         ImageView dialogButtonAgain = (ImageView) this.findViewById(R.id.dialogButtonAgain);
         dialogButtonAgain.setOnClickListener(new View.OnClickListener() {
@@ -87,5 +68,26 @@ public class EndStageDialog extends Dialog {
         });
 
         this.setCancelable(false);
+
+        this.saveLevelScoreIfBetter(level, score);
+    }
+
+    private void saveLevelScoreIfBetter(Integer level, Integer score) {
+        Level levelAtual = Session.getUsuarioLogado().getLevels().get(level - 1);
+        Level proximoLevel = Session.getUsuarioLogado().getLevels().get(level);
+
+        Log.d("ATUAL SCORE", levelAtual.getScore() +" vai virar " + score );
+        if (score > levelAtual.getScore() ) {
+            levelAtual.setScore(score);
+            Session.getUsuarioLogado().getLevels().set(level - 1, levelAtual);
+        }
+
+        //Verifica se o próximo nível está desbloqueado para poder modifica-lo
+        if (proximoLevel.getLocked() && score > 0) {
+            proximoLevel.setLocked(false);
+            Session.getUsuarioLogado().getLevels().set(level, proximoLevel);
+        }
+
+        SharedPrefManager.getInstance(getContext()).saveUserInSharedPref(Session.getUsuarioLogado());
     }
 }

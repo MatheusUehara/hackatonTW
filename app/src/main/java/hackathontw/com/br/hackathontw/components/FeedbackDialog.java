@@ -1,4 +1,4 @@
-package hackathontw.com.br.hackathontw;
+package hackathontw.com.br.hackathontw.components;
 
 import android.app.Dialog;
 import android.content.Context;
