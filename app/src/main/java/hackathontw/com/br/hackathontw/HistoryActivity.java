@@ -11,7 +11,6 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -77,15 +76,15 @@ public class HistoryActivity extends Activity
 //            }
 //        });
 
-        Button endStageDialog = (Button) findViewById(R.id.btnStart);
-        endStageDialog.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                EndStageDialog dialog = new EndStageDialog(HistoryActivity.this);
-                dialog.show();
-            }
-        });
+//        Button endStageDialog = (Button) findViewById(R.id.btnStart);
+//        endStageDialog.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View arg0) {
+//
+//                EndStageDialog dialog = new EndStageDialog(HistoryActivity.this);
+//                dialog.show();
+//            }
+//        });
     }
 }
