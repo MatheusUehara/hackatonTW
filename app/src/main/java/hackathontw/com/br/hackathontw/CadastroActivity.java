@@ -6,15 +6,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class CadastroActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Integer avatar = 0;
-    private TextView nome;
-    private ImageButton boyAvatar , girlAvatar;
+    private EditText nome;
+    private ImageView cachorineo , gatineo;
     private Button cadastrar;
 
     @Override
@@ -22,13 +22,13 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-        nome = (TextView) findViewById(R.id.nomeValue);
-        boyAvatar = (ImageButton) findViewById(R.id.boyAvatar);
-        girlAvatar = (ImageButton) findViewById(R.id.girlAvatar);
+        nome = (EditText) findViewById(R.id.nomeValue);
+        cachorineo = (ImageView) findViewById(R.id.cachorineo);
+        gatineo = (ImageView) findViewById(R.id.gatineo);
         cadastrar = (Button) findViewById(R.id.cadastrar);
 
-        boyAvatar.setOnClickListener(this);
-        girlAvatar.setOnClickListener(this);
+        cachorineo.setOnClickListener(this);
+        gatineo.setOnClickListener(this);
         cadastrar.setOnClickListener(this);
 
     }
@@ -37,13 +37,18 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.boyAvatar:
+            case R.id.cachorineo:
                 avatar = 1;
                 Log.d("ESCOLHEU O " , " AVATAR 1");
+                gatineo.setImageResource(R.drawable.gatineo);
+                cachorineo.setImageResource(R.drawable.cachorineo_selecionado);
                 break;
-            case R.id.girlAvatar:
+            case R.id.gatineo:
                 Log.d("ESCOLHEU O " , " AVATAR 2");
                 avatar = 2;
+                cachorineo.setImageResource(R.drawable.cachorineo);
+                gatineo.setImageResource(R.drawable.gatineo_selecionado);
+
                 break;
             case R.id.cadastrar:
                 String nomeValue = nome.getText().toString();

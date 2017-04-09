@@ -37,25 +37,22 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         levels.add(level8);
         levels.add(level9);
 
-        Usuario objetoUsuario = new Usuario();
+        Usuario objetoUsuario = Session.getUsuarioLogado();
         ArrayList<Level> levelsUsuario = objetoUsuario.getLevels();
         for (int i = 0 ; i < levelsUsuario.size() ; i++){
 
-            if ( levelsUsuario.get(i).getScore() != 0 || levelsUsuario.get(i).getLevel() == 1){
+            if ( ! levelsUsuario.get(i).getLocked() ){
 
                 levels.get(i).setOnClickListener(this);
 
                 if (levelsUsuario.get(i).getScore() == 1 ){
-                    levels.get(i).setImageResource(R.mipmap.ic_launcher_round);
-                    //levels.get(i).setImageResource(R.drawable.oneStar);
+                    levels.get(i).setImageResource(R.drawable.one_star);
                 }
                 else if (levelsUsuario.get(i).getScore() == 2 ){
-                    levels.get(i).setImageResource(R.mipmap.ic_launcher_round);
-                    //levels.get(i).setImageResource(R.drawable.twoStars);
+                    levels.get(i).setImageResource(R.drawable.two_stars);
                 }
                 else if (levelsUsuario.get(i).getScore() == 3 ){
-                    levels.get(i).setImageResource(R.mipmap.ic_launcher_round);
-                    //levels.get(i).setImageResource(R.drawable.threeStars);
+                    levels.get(i).setImageResource(R.drawable.three_stars);
                 }
             }else{
                 levels.get(i).setImageResource(R.drawable.locked);
@@ -70,47 +67,38 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.level1:
                 history.putExtra("level", 1);
                 startActivity(history);
-                finish();
                 break;
             case R.id.level2:
                 history.putExtra("level", 2);
                 startActivity(history);
-                finish();
                 break;
             case R.id.level3:
                 history.putExtra("level", 3);
                 startActivity(history);
-                finish();
                 break;
             case R.id.level4:
                 history.putExtra("level", 4);
                 startActivity(history);
-                finish();
                 break;
             case R.id.level5:
                 history.putExtra("level", 5);
                 startActivity(history);
-                finish();
                 break;
             case R.id.level6:
                 history.putExtra("level", 6);
                 startActivity(history);
-                finish();
                 break;
             case R.id.level7:
                 history.putExtra("level", 7);
                 startActivity(history);
-                finish();
                 break;
             case R.id.level8:
                 history.putExtra("level", 8);
                 startActivity(history);
-                finish();
                 break;
             case R.id.level9:
                 history.putExtra("level", 9);
                 startActivity(history);
-                finish();
                 break;
         }
 

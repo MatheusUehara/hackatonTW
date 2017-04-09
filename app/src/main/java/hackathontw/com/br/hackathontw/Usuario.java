@@ -15,15 +15,15 @@ public class Usuario {
     public Usuario(){
         this.levels = new ArrayList<>();
 
-        Level level1 = new Level(1,0);
-        Level level2 = new Level(2,0);
-        Level level3 = new Level(3,0);
-        Level level4 = new Level(4,0);
-        Level level5 = new Level(5,0);
-        Level level6 = new Level(6,0);
-        Level level7 = new Level(7,0);
-        Level level8 = new Level(8,0);
-        Level level9 = new Level(9,0);
+        Level level1 = new Level(1,0,false);
+        Level level2 = new Level(2,0,true);
+        Level level3 = new Level(3,0,true);
+        Level level4 = new Level(4,0,true);
+        Level level5 = new Level(5,0,true);
+        Level level6 = new Level(6,0,true);
+        Level level7 = new Level(7,0,true);
+        Level level8 = new Level(8,0,true);
+        Level level9 = new Level(9,0,true);
 
         levels.add(level1);
         levels.add(level2);
@@ -59,4 +59,5 @@ public class Usuario {
     public void setLevels(ArrayList<Level> levels) {
         this.levels = levels;
     }
+
 }

@@ -33,31 +33,9 @@
                 android:id="@+id/imgFstStar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minWidth="50dp"
-                android:minHeight="50dp"
-                android:background="@color/colorPrimary"
                 android:layout_margin="5dp"
-                />
-
-            <ImageView
-                android:id="@+id/imgSndtStar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="50dp"
                 android:minHeight="50dp"
-                android:background="@color/colorPrimary"
-                android:layout_margin="5dp"
-                />
-
-            <ImageView
-                android:id="@+id/imgThdStar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="50dp"
-                android:minHeight="50dp"
-                android:background="@color/colorPrimary"
-                android:layout_margin="5dp"
-                />
+                android:minWidth="50dp" />
 
         </LinearLayout>
 
