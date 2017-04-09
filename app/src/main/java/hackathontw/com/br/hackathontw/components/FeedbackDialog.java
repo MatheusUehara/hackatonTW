@@ -1,16 +1,16 @@
-package hackathontw.com.br.hackathontw;
+package hackathontw.com.br.hackathontw.components;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import hackathontw.com.br.hackathontw.R;
 
 /**
  * Created by GilsonDeOliveira on 08/04/2017.
