@@ -86,10 +86,10 @@ public class HistoryActivity extends Activity
         ImageView map = (ImageView) findViewById(R.id.imgHistory);
         switch (level){
             case 1:
-                map.setBackgroundResource(R.drawable.history01);
+                map.setImageResource(R.drawable.history01);
                 break;
             case 2:
-                map.setBackgroundResource(R.drawable.history02);
+                map.setImageResource(R.drawable.history02);
                 break;
             case 3:
 //                map.setBackgroundResource(R.drawable.history03);
