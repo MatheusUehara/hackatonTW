@@ -29,18 +29,17 @@ public class FeedbackDialog extends Dialog {
         if(isCorrectAnswer) {
             customTitle.setText("Parabéns, você acertou!");
 
-            image.setImageResource(R.drawable.card1);
+            image.setImageResource(R.drawable.icone_yay);
 
             dialogPanel.setBackgroundResource(R.color.colorCorrectAnswer);
         }
         else {
             customTitle.setText("Que pena, não foi dessa vez...");
 
-            image.setImageResource(R.drawable.card2);
+            image.setImageResource(R.drawable.icone_nop);
 
             dialogPanel.setBackgroundResource(R.color.colorWrongAnswer);
         }
-
 
         TextView content = (TextView) this.findViewById(R.id.content);
         content.setText("lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum.");
