@@ -1,4 +1,4 @@
-package hackathontw.com.br.hackathontw;
+package hackathontw.com.br.hackathontw.components;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -10,6 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import hackathontw.com.br.hackathontw.HistoryActivity;
+import hackathontw.com.br.hackathontw.Level;
+import hackathontw.com.br.hackathontw.MenuActivity;
+import hackathontw.com.br.hackathontw.R;
+import hackathontw.com.br.hackathontw.Session;
+import hackathontw.com.br.hackathontw.SharedPrefManager;
 
 /**
  * Created by GilsonDeOliveira on 08/04/2017.
@@ -29,7 +36,7 @@ public class EndStageDialog extends Dialog {
         TextView titulo = (TextView) findViewById(R.id.customTitle);
 
         if ( score == 0){
-            titulo.setText("Falha");
+            titulo.setText(context.getResources().getString(R.string.end_stage_fail));
             stars.setImageResource(R.drawable.icone_nop);
         }else if ( score == 1){
             stars.setImageResource(R.drawable.one_star);

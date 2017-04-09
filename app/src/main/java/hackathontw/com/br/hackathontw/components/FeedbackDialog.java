@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import hackathontw.com.br.hackathontw.R;
+
 /**
  * Created by GilsonDeOliveira on 08/04/2017.
  */
@@ -28,7 +30,6 @@ public class FeedbackDialog extends Dialog {
         TextView customTitle = (TextView) this.findViewById(R.id.customTitle);
         ImageView image = (ImageView) this.findViewById(R.id.image);
         LinearLayout dialogPanel = (LinearLayout) this.findViewById(R.id.dialogPanel);
-
         if(isCorrectAnswer) {
             customTitle.setText(context.getResources().getString(R.string.feedback_success));
 

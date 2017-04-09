@@ -1,6 +1,5 @@
 package hackathontw.com.br.hackathontw;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,9 +8,10 @@ import android.widget.Toast;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Random;
+
+import hackathontw.com.br.hackathontw.components.FeedbackDialog;
 
 /**
  * Created by rblb on 4/8/17.
