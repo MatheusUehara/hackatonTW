@@ -13,15 +13,6 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
-        <Button
-            android:id="@+id/btnShare"
-            android:layout_width="@android:dimen/app_icon_size"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="15dp"
-            android:background="@android:drawable/ic_menu_share" />
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -31,28 +22,31 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="top">
 
-                <ImageView
-                    android:id="@+id/imgHistory"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/history01"
-                    android:adjustViewBounds="true" />
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/btnStart"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|right"
-                    android:text="Iniciar"
-                    android:background="@drawable/buttonshape"
-                    android:shadowColor="#58D1B4"
-                    android:textColor="#FFFFFF"
-                    android:shadowDx="0"
-                    android:shadowDy="0"
-                    android:shadowRadius="5"
-                    />
+                    <ImageView
+                        android:id="@+id/imgHistory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/history01" />
+
+
+                    <ImageView
+                        android:id="@+id/iniciar"
+                        android:layout_width="166dp"
+                        android:layout_height="56dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/iniciar_btn" />
+
+                </LinearLayout>
 
             </FrameLayout>
+
+
 
         </ScrollView>
 

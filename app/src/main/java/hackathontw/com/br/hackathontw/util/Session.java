@@ -1,4 +1,6 @@
-package hackathontw.com.br.hackathontw;
+package hackathontw.com.br.hackathontw.util;
+
+import hackathontw.com.br.hackathontw.entity.Usuario;
 
 /**
  * Created by Uehara on 08/04/2017.

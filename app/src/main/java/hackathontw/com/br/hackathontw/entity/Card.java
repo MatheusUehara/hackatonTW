@@ -1,4 +1,4 @@
-package hackathontw.com.br.hackathontw;
+package hackathontw.com.br.hackathontw.entity;
 
 /**
  * Created by rblb on 4/8/17.

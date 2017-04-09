@@ -5,10 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 
+import hackathontw.com.br.hackathontw.entity.Usuario;
+import hackathontw.com.br.hackathontw.util.Session;
+import hackathontw.com.br.hackathontw.util.SharedPrefManager;
+
 /**
  * Created by Uehara on 08/04/2017.
  */
-public class SplashAct extends AppCompatActivity implements Runnable {
+public class SplashActivity extends AppCompatActivity implements Runnable {
 
     private final static int SHOW_TIME = 1300;
 

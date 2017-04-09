@@ -1,4 +1,4 @@
-package hackathontw.com.br.hackathontw;
+package hackathontw.com.br.hackathontw.entity;
 
 /**
  * Created by Uehara on 08/04/2017.

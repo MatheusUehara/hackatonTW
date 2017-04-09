@@ -1,10 +1,12 @@
-package hackathontw.com.br.hackathontw;
+package hackathontw.com.br.hackathontw.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.google.gson.Gson;
+
+import hackathontw.com.br.hackathontw.entity.Usuario;
 
 /**
  * Created by Uehara on 08/04/2017.

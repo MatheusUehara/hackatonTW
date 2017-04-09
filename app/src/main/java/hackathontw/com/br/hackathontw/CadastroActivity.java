@@ -1,15 +1,17 @@
 package hackathontw.com.br.hackathontw;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import hackathontw.com.br.hackathontw.entity.Usuario;
+import hackathontw.com.br.hackathontw.util.Session;
+import hackathontw.com.br.hackathontw.util.SharedPrefManager;
 
 /**
  * Created by Uehara on 08/04/2017.

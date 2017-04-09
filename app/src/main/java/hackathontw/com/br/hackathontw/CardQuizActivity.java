@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+import hackathontw.com.br.hackathontw.adapter.CardAdapter;
 import hackathontw.com.br.hackathontw.components.FeedbackDialog;
+import hackathontw.com.br.hackathontw.entity.Card;
 
 /**
  * Created by rblb on 4/8/17.

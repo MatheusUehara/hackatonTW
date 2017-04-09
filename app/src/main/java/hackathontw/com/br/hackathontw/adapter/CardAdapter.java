@@ -1,4 +1,4 @@
-package hackathontw.com.br.hackathontw;
+package hackathontw.com.br.hackathontw.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,7 +12,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
-import java.util.zip.Inflater;
+
+import hackathontw.com.br.hackathontw.R;
+import hackathontw.com.br.hackathontw.entity.Card;
 
 /**
  * Created by rblb on 4/8/17.

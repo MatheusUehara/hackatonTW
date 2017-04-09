@@ -1,4 +1,4 @@
-package hackathontw.com.br.hackathontw;
+package hackathontw.com.br.hackathontw.entity;
 
 import java.util.ArrayList;
 

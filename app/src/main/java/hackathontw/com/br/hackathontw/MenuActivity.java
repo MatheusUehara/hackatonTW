@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.ImageView;
 import java.util.ArrayList;
 
+import hackathontw.com.br.hackathontw.entity.Level;
+import hackathontw.com.br.hackathontw.entity.Usuario;
+import hackathontw.com.br.hackathontw.util.Session;
+
 /**
  * Created by Uehara on 08/04/2017.
  */

@@ -6,17 +6,14 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import hackathontw.com.br.hackathontw.HistoryActivity;
-import hackathontw.com.br.hackathontw.Level;
+import hackathontw.com.br.hackathontw.entity.Level;
 import hackathontw.com.br.hackathontw.MenuActivity;
 import hackathontw.com.br.hackathontw.R;
-import hackathontw.com.br.hackathontw.Session;
-import hackathontw.com.br.hackathontw.SharedPrefManager;
+import hackathontw.com.br.hackathontw.util.Session;
+import hackathontw.com.br.hackathontw.util.SharedPrefManager;
 
 /**
  * Created by GilsonDeOliveira on 08/04/2017.

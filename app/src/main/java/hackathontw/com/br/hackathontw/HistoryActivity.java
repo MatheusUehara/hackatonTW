@@ -43,7 +43,7 @@ public class HistoryActivity extends Activity
 
         this.chooseHistoryByLevel(level);
 
-        final Button btnShare = (Button) findViewById(R.id.btnShare);
+        /*final Button btnShare = (Button) findViewById(R.id.btnShare);
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -68,8 +68,9 @@ public class HistoryActivity extends Activity
                 startActivity(Intent.createChooser(share, "Share Image"));
             }
         });
+        */
 
-        final Button btnStart = (Button) findViewById(R.id.btnStart);
+        final ImageView btnStart = (ImageView) findViewById(R.id.iniciar);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
