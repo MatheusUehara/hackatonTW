@@ -3,12 +3,10 @@ package hackathontw.com.br.hackathontw;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -35,15 +33,15 @@ public class HistoryActivity extends Activity
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
-                level= null;
+                level = null;
             } else {
-                level= extras.getInt("level");
+                level = extras.getInt("level");
             }
         } else {
-            level= (Integer) savedInstanceState.getSerializable("level");
+            level = (Integer) savedInstanceState.getSerializable("level");
         }
 
-        Log.d("LEVEL", level+"");
+        this.chooseHistoryByLevel(level);
 
         final Button btnShare = (Button) findViewById(R.id.btnShare);
         btnShare.setOnClickListener(new View.OnClickListener() {
@@ -82,18 +80,6 @@ public class HistoryActivity extends Activity
             }
         });
 
-
-//        Button showFeedbackDialog = (Button) findViewById(R.id.btnStart);
-//        showFeedbackDialog.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View arg0) {
-//
-//                FeedbackDialog dialog = new FeedbackDialog(HistoryActivity.this, true);
-//                dialog.show();
-//            }
-//        });
-
 //        Button endStageDialog = (Button) findViewById(R.id.btnStart);
 //        endStageDialog.setOnClickListener(new View.OnClickListener() {
 //
@@ -104,5 +90,26 @@ public class HistoryActivity extends Activity
 //                dialog.show();
 //            }
 //        });
+    }
+
+    private void chooseHistoryByLevel(int level){
+        ImageView map = (ImageView) findViewById(R.id.imgHistory);
+        switch (level){
+            case 1:
+                map.setBackgroundResource(R.drawable.history01);
+                break;
+            case 2:
+                map.setBackgroundResource(R.drawable.history02);
+                break;
+            case 3:
+//                map.setBackgroundResource(R.drawable.history03);
+                break;
+            case 4:
+//                map.setBackgroundResource(R.drawable.history04);
+                break;
+            case 5:
+//                map.setBackgroundResource(R.drawable.history05);
+                break;
+        }
     }
 }

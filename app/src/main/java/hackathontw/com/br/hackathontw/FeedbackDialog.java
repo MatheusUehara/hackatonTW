@@ -27,14 +27,14 @@ public class FeedbackDialog extends Dialog {
         ImageView image = (ImageView) this.findViewById(R.id.image);
         LinearLayout dialogPanel = (LinearLayout) this.findViewById(R.id.dialogPanel);
         if(isCorrectAnswer) {
-            customTitle.setText("Parabéns, você acertou!");
+            customTitle.setText(context.getResources().getString(R.string.feedback_success));
 
             image.setImageResource(R.drawable.icone_yay);
 
             dialogPanel.setBackgroundResource(R.color.colorCorrectAnswer);
         }
         else {
-            customTitle.setText("Que pena, não foi dessa vez...");
+            customTitle.setText(context.getResources().getString(R.string.feedback_fail));
 
             image.setImageResource(R.drawable.icone_nop);
 
