@@ -79,6 +79,7 @@ public class HistoryActivity extends Activity
                 Intent quiz = new Intent(HistoryActivity.this, CardQuizActivity.class);
                 quiz.putExtra("level",level);
                 startActivity(quiz);
+                finish();
             }
         });
 
