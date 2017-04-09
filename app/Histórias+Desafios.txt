@@ -1,4 +1,4 @@
-#HISTÓRIA 1
+﻿#HISTÓRIA 1
 *Desingualdade de genero
 *Machismo
 
@@ -30,22 +30,25 @@ CARD 3 -
 Imagem: desafio1_card3
 Frase: Meninas podem gostar de azul!
 Resposta: V
+Explicação: As meninas podem gostar de qualquer cor que quiserem, inclusive a cor azul!
 
 CARD 4 -
 Imagem: desafio1_card4
 Frase: Meninas podem jogar bola!
 Resposta: V
+Explicação: As meninas podem praticar qualquer esporte, inclusive jogar bola!
 
 CARD 5 -
 Imagem: desafio_card5
 Frase: Meninos podem brincar com bonecas!
 Resposta: V
-
+Explicação: Meninos podem brincar com qualquer brinquedo que eles queiram, inclusive bonecas.
 
 CARD 6 -
 Imagem: desafio_card6
 Frase: Meninos podem brincar com coisas de meninas e vice-versa!
 Resposta: V
+Explicação: Meninos e meninas podem sim brincar com qualquer coisa que eles queiram.
 
 
 #HISTÓRIA 2
@@ -82,11 +85,13 @@ CARD 3 -
 Imagem: desafio2_card3
 Frase: Mulheres podem preencher cargos altos, perigosos e complicados!
 Resposta: V
+Explicação: Mulheres podem  preencher qualquer tipo de cargos que elas desejem.
 
 CARD 4 -
 Imagem: desafio2_card4
 Frase: Mulheres estão participando do mercado de trabalho.
 Resposta: V
+Explicação: As mulheres estão cada vez participando mais do mercado de trabalho.
 
 CARD 5 -
 Imagem: desafio2_card5
