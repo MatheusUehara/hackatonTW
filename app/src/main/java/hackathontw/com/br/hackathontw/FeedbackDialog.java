@@ -22,12 +22,12 @@ public class FeedbackDialog extends Dialog {
         if(isCorrectAnswer) {
             this.setTitle("Parabéns, você acertou!");
 
-            image.setImageResource(R.drawable.card1);
+            image.setImageResource(R.drawable.icone_yay);
         }
         else {
             this.setTitle("Que pena, não foi dessa vez...");
 
-            image.setImageResource(R.drawable.card2);
+            image.setImageResource(R.drawable.icone_nop);
         }
 
         TextView content = (TextView) this.findViewById(R.id.content);
