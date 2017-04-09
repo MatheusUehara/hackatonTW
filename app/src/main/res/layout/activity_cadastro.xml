@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nome"
+            android:textColor="@color/white"
             android:inputType="textPersonName|textVisiblePassword"
             android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse" />
 
@@ -44,19 +44,20 @@
             android:layout_height="250dp"
             android:layout_weight="2">
 
-            <ImageButton
-                android:id="@+id/boyAvatar"
+            <ImageView
+                android:id="@+id/cachorineo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@mipmap/ic_launcher_round" />
+                app:srcCompat="@drawable/cachorineo" />
 
-            <ImageButton
-                android:id="@+id/girlAvatar"
+            <ImageView
+                android:id="@+id/gatineo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@mipmap/ic_launcher_round" />
+                app:srcCompat="@drawable/gatineo" />
+
         </LinearLayout>
 
 

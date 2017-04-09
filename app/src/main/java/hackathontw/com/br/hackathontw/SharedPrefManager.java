@@ -2,6 +2,7 @@ package hackathontw.com.br.hackathontw;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -43,6 +44,7 @@ public class SharedPrefManager {
         Gson gson = new Gson();
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         String json = sharedPreferences.getString(FULL_USER, "");
+        Log.d(FULL_USER, json);
         Usuario usuario = gson.fromJson(json, Usuario.class);
         if ( json != "" ){
             return usuario;

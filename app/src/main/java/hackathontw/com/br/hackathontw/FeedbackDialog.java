@@ -3,6 +3,7 @@ package hackathontw.com.br.hackathontw;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -50,6 +51,7 @@ public class FeedbackDialog extends Dialog {
             public void onClick(View v) {
                 FeedbackDialog.this.dismiss();
                 if(stars != -1){
+                    Log.d("STARS" , stars+"");
                     EndStageDialog endStage = new EndStageDialog(context, stars, currentLevel);
                     endStage.show();
                 }
