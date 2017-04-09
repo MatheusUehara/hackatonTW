@@ -43,45 +43,37 @@ public class CardQuizActivity extends AppCompatActivity {
                 mCardList.remove(0);
                 mAdapter.notifyDataSetChanged();
                 Card card = (Card) o;
-                if(!mCardList.isEmpty()){
-                    FeedbackDialog dialog;
-                    if(card.getAnswer()){
-                        dialog = new FeedbackDialog(CardQuizActivity.this, false);
-                        dialog.show();
-                    }else{
-                        mScore += 1;
-                        dialog = new FeedbackDialog(CardQuizActivity.this, true);
-                        dialog.show();
-                    }
-                }else{
-                    if(!card.getAnswer()){
-                        mScore += 1;
-                    }
+                FeedbackDialog dialog;
+                if (card.getAnswer()) {
+                    dialog = new FeedbackDialog(CardQuizActivity.this, false);
+                    dialog.show();
+                } else {
+                    mScore += 1;
+                    dialog = new FeedbackDialog(CardQuizActivity.this, true);
+                    dialog.show();
+                }
+                if (mCardList.isEmpty()) {
                     Toast.makeText(CardQuizActivity.this, "Score: " + mScore, Toast.LENGTH_SHORT).show();
                     //TODO:finish level
                 }
-
             }
+
 
             @Override
             public void onRightCardExit(Object o) {
                 mCardList.remove(0);
                 mAdapter.notifyDataSetChanged();
                 Card card = (Card) o;
-                if(!mCardList.isEmpty()){
-                    FeedbackDialog dialog;
-                    if(card.getAnswer()){
-                        mScore += 1;
-                        dialog = new FeedbackDialog(CardQuizActivity.this, true);
-                        dialog.show();
-                    }else{
-                        dialog = new FeedbackDialog(CardQuizActivity.this, false);
-                        dialog.show();
-                    }
-                }else{
-                    if(card.getAnswer()){
-                        mScore += 1;
-                    }
+                FeedbackDialog dialog;
+                if (card.getAnswer()) {
+                    mScore += 1;
+                    dialog = new FeedbackDialog(CardQuizActivity.this, true);
+                    dialog.show();
+                } else {
+                    dialog = new FeedbackDialog(CardQuizActivity.this, false);
+                    dialog.show();
+                }
+                if (mCardList.isEmpty()) {
                     Toast.makeText(CardQuizActivity.this, "Score: " + mScore, Toast.LENGTH_SHORT).show();
                     //TODO: finish level
                 }
@@ -100,7 +92,7 @@ public class CardQuizActivity extends AppCompatActivity {
             }
         });
 
-        mFlingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener(){
+        mFlingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
             @Override
             public void onItemClicked(int i, Object o) {
                 View view = mFlingContainer.getSelectedView();
