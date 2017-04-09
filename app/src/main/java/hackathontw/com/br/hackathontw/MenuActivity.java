@@ -4,30 +4,32 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.view.Window;
+import android.widget.ImageView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private ImageButton level1,level2,level3,level4,level5,level6,level7,level8,level9;
-    private ArrayList<ImageButton> levels = new ArrayList<>();
+    private ImageView level1,level2,level3,level4,level5,level6,level7,level8,level9;
+    private ArrayList<ImageView> levels = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        level1 = (ImageButton) findViewById(R.id.level1);
-        level2 = (ImageButton) findViewById(R.id.level2);
-        level3 = (ImageButton) findViewById(R.id.level3);
-        level4 = (ImageButton) findViewById(R.id.level4);
-        level5 = (ImageButton) findViewById(R.id.level5);
-        level6 = (ImageButton) findViewById(R.id.level6);
-        level7 = (ImageButton) findViewById(R.id.level7);
-        level8 = (ImageButton) findViewById(R.id.level8);
-        level9 = (ImageButton) findViewById(R.id.level9);
+        level1 = (ImageView) findViewById(R.id.level1);
+        level2 = (ImageView) findViewById(R.id.level2);
+        level3 = (ImageView) findViewById(R.id.level3);
+        level4 = (ImageView) findViewById(R.id.level4);
+        level5 = (ImageView) findViewById(R.id.level5);
+        level6 = (ImageView) findViewById(R.id.level6);
+        level7 = (ImageView) findViewById(R.id.level7);
+        level8 = (ImageView) findViewById(R.id.level8);
+        level9 = (ImageView) findViewById(R.id.level9);
 
         levels.add(level1);
         levels.add(level2);
@@ -43,7 +45,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         ArrayList<Level> levelsUsuario = objetoUsuario.getLevels();
         for (int i = 0 ; i < levelsUsuario.size() ; i++){
 
-            if ( levelsUsuario.get(i).getScore() != 0 ){
+            if ( levelsUsuario.get(i).getScore() != 0 || levelsUsuario.get(i).getLevel() == 1){
 
                 levels.get(i).setOnClickListener(this);
 
@@ -55,21 +57,19 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                     levels.get(i).setImageResource(R.mipmap.ic_launcher_round);
                     //levels.get(i).setImageResource(R.drawable.twoStars);
                 }
-                else{
+                else if (levelsUsuario.get(i).getScore() == 3 ){
                     levels.get(i).setImageResource(R.mipmap.ic_launcher_round);
                     //levels.get(i).setImageResource(R.drawable.threeStars);
                 }
             }else{
-                levels.get(i).setImageResource(R.mipmap.ic_launcher_round);
-                //levels.get(i).setImageResource(R.drawable.locked);
+                levels.get(i).setImageResource(R.drawable.locked);
             }
         }
     }
 
     @Override
     public void onClick(View v) {
-        /*
-        Intent history = new Intent(this, HistoryChallenger.class);
+        Intent history = new Intent(this, HistoryActivity.class);
         switch (v.getId()){
             case R.id.level1:
                 history.putExtra("level", 1);
@@ -117,37 +117,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 finish();
                 break;
         }
-        */
 
-        switch (v.getId()){
-            case R.id.level1:
-                Toast.makeText(this,"level 1", Toast.LENGTH_LONG).show();
-                break;
-            case R.id.level2:
-                Toast.makeText(this,"level 2", Toast.LENGTH_LONG).show();
-                break;
-            case R.id.level3:
-                Toast.makeText(this,"level 3", Toast.LENGTH_LONG).show();
-                break;
-            case R.id.level4:
-                Toast.makeText(this,"level 4", Toast.LENGTH_LONG).show();
-                break;
-            case R.id.level5:
-                Toast.makeText(this,"level 5", Toast.LENGTH_LONG).show();
-                break;
-            case R.id.level6:
-                Toast.makeText(this,"level 6", Toast.LENGTH_LONG).show();
-                break;
-            case R.id.level7:
-                Toast.makeText(this,"level 7", Toast.LENGTH_LONG).show();
-                break;
-            case R.id.level8:
-                Toast.makeText(this,"level 8", Toast.LENGTH_LONG).show();
-                break;
-            case R.id.level9:
-                Toast.makeText(this,"level 9", Toast.LENGTH_LONG).show();
-                break;
-        }
 
     }
 }

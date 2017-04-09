@@ -3,9 +3,9 @@ package hackathontw.com.br.hackathontw;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,13 +39,15 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()){
             case R.id.boyAvatar:
                 avatar = 1;
+                Log.d("ESCOLHEU O " , " AVATAR 1");
                 break;
             case R.id.girlAvatar:
+                Log.d("ESCOLHEU O " , " AVATAR 2");
                 avatar = 2;
                 break;
             case R.id.cadastrar:
                 String nomeValue = nome.getText().toString();
-                if ( nomeValue.equals("") && avatar != 0 ){
+                if ( !nomeValue.equals("") && avatar != 0 ){
                     Usuario user = new Usuario();
                     user.setAvatar(avatar);
                     user.setNome(nome.getText().toString());

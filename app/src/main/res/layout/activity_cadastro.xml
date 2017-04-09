@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="hackathontw.com.br.hackathontw.CadastroActivity">
 
     <LinearLayout
@@ -13,26 +14,30 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/nomeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Digite seu nome" />
+            android:text="Digite seu nome"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse" />
 
         <EditText
             android:id="@+id/nomeValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Nome"
             android:inputType="textPersonName|textVisiblePassword"
-            android:hint="Nome"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse" />
 
 
         <TextView
             android:id="@+id/avatarText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Escolha seu Avatar" />
+            android:text="Escolha seu Avatar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse" />
 
         <LinearLayout
             android:layout_width="match_parent"
