@@ -62,14 +62,14 @@ public class CardQuizActivity extends AppCompatActivity {
                     if(mCardList.isEmpty()){
                         calculateStars();
                     }
-                    dialog = new FeedbackDialog(CardQuizActivity.this, false, stars);
+                    dialog = new FeedbackDialog(CardQuizActivity.this, false, stars, level);
                     dialog.show();
                 } else {
                     mScore += 1;
                     if(mCardList.isEmpty()){
                         calculateStars();
                     }
-                    dialog = new FeedbackDialog(CardQuizActivity.this, true, stars);
+                    dialog = new FeedbackDialog(CardQuizActivity.this, true, stars, level);
                     dialog.show();
                 }
                 if (mCardList.isEmpty()) {
@@ -90,13 +90,13 @@ public class CardQuizActivity extends AppCompatActivity {
                     if(mCardList.isEmpty()){
                         calculateStars();
                     }
-                    dialog = new FeedbackDialog(CardQuizActivity.this, true, stars);
+                    dialog = new FeedbackDialog(CardQuizActivity.this, true, stars, level);
                     dialog.show();
                 } else {
                     if(mCardList.isEmpty()){
                         calculateStars();
                     }
-                    dialog = new FeedbackDialog(CardQuizActivity.this, false, stars);
+                    dialog = new FeedbackDialog(CardQuizActivity.this, false, stars, level);
                     dialog.show();
                 }
                 if (mCardList.isEmpty()) {

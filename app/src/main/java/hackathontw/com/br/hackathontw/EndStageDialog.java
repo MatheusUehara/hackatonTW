@@ -13,7 +13,7 @@ import android.widget.Button;
 
 public class EndStageDialog extends Dialog {
 
-    public EndStageDialog(final Context context, int starts)
+    public EndStageDialog(final Context context, int starts, final Integer level)
     {
         super(context);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -23,7 +23,9 @@ public class EndStageDialog extends Dialog {
         dialogButtonAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Repete a fase
+                Intent menu = new Intent(context, HistoryActivity.class);
+                menu.putExtra("level", level);
+                context.startActivity(menu);
             }
         });
 
