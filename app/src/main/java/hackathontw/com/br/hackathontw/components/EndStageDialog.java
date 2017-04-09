@@ -70,6 +70,7 @@ public class EndStageDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 Intent menu = new Intent(context, HistoryActivity.class);
+
                 menu.putExtra("level", level);
                 menu.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 context.startActivity(menu);
