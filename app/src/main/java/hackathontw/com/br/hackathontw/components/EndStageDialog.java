@@ -35,7 +35,7 @@ public class EndStageDialog extends Dialog {
         TextView titulo = (TextView) findViewById(R.id.customTitle);
 
         if ( score == 0){
-            titulo.setText("Falha");
+            titulo.setText(context.getResources().getString(R.string.end_stage_fail));
             stars.setImageResource(R.drawable.icone_nop);
         }else if ( score == 1){
             stars.setImageResource(R.drawable.one_star);
