@@ -10,34 +10,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
+        android:layout_marginTop="15dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/nomeText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Digite seu nome"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse" />
+        <ImageView
+            android:id="@+id/nomeTitle"
+            android:layout_width="143dp"
+            android:layout_height="27dp"
+            android:layout_gravity="start"
+            app:srcCompat="@drawable/nome_title" />
 
         <EditText
             android:id="@+id/nomeValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:textColor="@color/white"
             android:inputType="textPersonName|textVisiblePassword"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
+            android:textColor="@color/white" />
 
 
-        <TextView
-            android:id="@+id/avatarText"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/avatarTitle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Escolha seu Avatar"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse" />
+            app:srcCompat="@drawable/avatar_title" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,10 +68,6 @@
             android:layout_marginTop="25dp"
             android:src="@drawable/cadastrar_btn" />
     </LinearLayout>
-
-
-
-
 
 
 </RelativeLayout>

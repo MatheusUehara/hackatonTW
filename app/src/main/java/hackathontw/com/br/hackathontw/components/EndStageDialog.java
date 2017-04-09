@@ -30,13 +30,15 @@ public class EndStageDialog extends Dialog {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.setContentView(R.layout.end_stage_dialog);
 
-        final Integer score = starts;
+        Integer score = starts;
 
-        final ImageView stars = (ImageView) findViewById(R.id.imgFstStar);
-        TextView titulo = (TextView) findViewById(R.id.customTitle);
+        ImageView titulo = (ImageView) findViewById(R.id.customTitle);
+
+        ImageView stars = (ImageView) findViewById(R.id.imgFstStar);
 
         if ( score == 0){
-            titulo.setText(context.getResources().getString(R.string.end_stage_fail));
+            //titulo.setText(context.getResources().getString(R.string.end_stage_fail));
+            titulo.setImageResource(R.drawable.fase_falha_title);
             stars.setImageResource(R.drawable.icone_nop);
         }else if ( score == 1){
             stars.setImageResource(R.drawable.one_star);
@@ -68,7 +70,6 @@ public class EndStageDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 Intent menu = new Intent(context, HistoryActivity.class);
-
                 menu.putExtra("level", level);
                 menu.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 context.startActivity(menu);
