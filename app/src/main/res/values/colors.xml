@@ -5,8 +5,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="colorCorrectAnswer">#66D066</color>
-    <color name="colorWrongAnswer">#00B200</color>
+    <color name="colorCorrectAnswer">#adebad</color>
+    <color name="colorWrongAnswer">#ff9999</color>
 
 
     <color name="black_overlay">#66000000</color>

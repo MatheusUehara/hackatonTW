@@ -31,8 +31,8 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/background"
-                    android:background="@color/colorPrimaryDark"
+                    android:src="@drawable/history01"
+                    android:id="@+id/imgHistory"
                     />
 
                 <Button
