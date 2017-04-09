@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import hackathontw.com.br.hackathontw.R;
+import hackathontw.com.br.hackathontw.components.EndStageDialog;
 
 /**
  * Created by GilsonDeOliveira on 08/04/2017.
