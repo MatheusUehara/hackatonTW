@@ -2,6 +2,7 @@ package hackathontw.com.br.hackathontw;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -12,7 +13,7 @@ import android.widget.Button;
 
 public class EndStageDialog extends Dialog {
 
-    public EndStageDialog(final Context context)
+    public EndStageDialog(final Context context, int starts)
     {
         super(context);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -30,7 +31,8 @@ public class EndStageDialog extends Dialog {
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Vai para a proxima fase ou menu.
+                Intent menu = new Intent(context, MenuActivity.class);
+                context.startActivity(menu);
             }
         });
 

@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 public class FeedbackDialog extends Dialog {
 
-    public FeedbackDialog(final Context context, boolean isCorrectAnswer, int stars)
+    public FeedbackDialog(final Context context, boolean isCorrectAnswer, final int stars)
     {
         super(context);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -49,6 +49,10 @@ public class FeedbackDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 FeedbackDialog.this.dismiss();
+                if(stars != -1){
+                    EndStageDialog endStage = new EndStageDialog(context, stars);
+                    endStage.show();
+                }
             }
         });
 

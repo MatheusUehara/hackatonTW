@@ -80,17 +80,6 @@ public class HistoryActivity extends Activity
                 finish();
             }
         });
-
-//        Button endStageDialog = (Button) findViewById(R.id.btnStart);
-//        endStageDialog.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View arg0) {
-//
-//                EndStageDialog dialog = new EndStageDialog(HistoryActivity.this);
-//                dialog.show();
-//            }
-//        });
     }
 
     private void chooseHistoryByLevel(int level){
