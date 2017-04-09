@@ -23,6 +23,7 @@ public class CardQuizActivity extends AppCompatActivity {
     private SwipeFlingAdapterView mFlingContainer;
     private int mScore = 0;
     private Integer level;
+    private int stars = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +32,13 @@ public class CardQuizActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
-            if(extras == null) {
-                level= null;
+            if (extras == null) {
+                level = null;
             } else {
-                level= extras.getInt("level");
+                level = extras.getInt("level");
             }
         } else {
-            level= (Integer) savedInstanceState.getSerializable("level");
+            level = (Integer) savedInstanceState.getSerializable("level");
         }
 
         populateCardList(level);
@@ -58,11 +59,17 @@ public class CardQuizActivity extends AppCompatActivity {
                 Card card = (Card) o;
                 FeedbackDialog dialog;
                 if (card.getAnswer()) {
-                    dialog = new FeedbackDialog(CardQuizActivity.this, false);
+                    if(mCardList.isEmpty()){
+                        calculateStars();
+                    }
+                    dialog = new FeedbackDialog(CardQuizActivity.this, false, stars);
                     dialog.show();
                 } else {
                     mScore += 1;
-                    dialog = new FeedbackDialog(CardQuizActivity.this, true);
+                    if(mCardList.isEmpty()){
+                        calculateStars();
+                    }
+                    dialog = new FeedbackDialog(CardQuizActivity.this, true, stars);
                     dialog.show();
                 }
                 if (mCardList.isEmpty()) {
@@ -80,10 +87,16 @@ public class CardQuizActivity extends AppCompatActivity {
                 FeedbackDialog dialog;
                 if (card.getAnswer()) {
                     mScore += 1;
-                    dialog = new FeedbackDialog(CardQuizActivity.this, true);
+                    if(mCardList.isEmpty()){
+                        calculateStars();
+                    }
+                    dialog = new FeedbackDialog(CardQuizActivity.this, true, stars);
                     dialog.show();
                 } else {
-                    dialog = new FeedbackDialog(CardQuizActivity.this, false);
+                    if(mCardList.isEmpty()){
+                        calculateStars();
+                    }
+                    dialog = new FeedbackDialog(CardQuizActivity.this, false, stars);
                     dialog.show();
                 }
                 if (mCardList.isEmpty()) {
@@ -117,10 +130,22 @@ public class CardQuizActivity extends AppCompatActivity {
 
     }
 
+    private void calculateStars() {
+        if (mScore == 3) {
+            stars = 1;
+        } else if (mScore == 4) {
+            stars = 2;
+        } else if (mScore >= 5) {
+            stars = 3;
+        }else{
+            stars = 0;
+        }
+    }
+
     private void populateCardList(Integer level) {
         mCardList = new ArrayList<>();
 
-        switch (level){
+        switch (level) {
             case 1:
                 mCardList.add(new Card(R.drawable.desafio1_card1, "Meninas não podem brincar com brinquedos de meninos!", false));
                 mCardList.add(new Card(R.drawable.desafio1_card2, "Meninos e meninas não podem gostas das mesmas coisas!", false));
