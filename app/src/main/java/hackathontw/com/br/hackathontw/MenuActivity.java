@@ -4,11 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageView;
-import android.widget.ImageView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener{

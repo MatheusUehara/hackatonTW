@@ -17,9 +17,9 @@
             android:screenOrientation="portrait">
         </activity>
 
-        <!--<activity-->
-            <!--android:name=".CardQuizActivity"-->
-            <!--android:screenOrientation="portrait"/>-->
+        <activity
+            android:name=".CardQuizActivity"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".MenuActivity"
@@ -31,17 +31,13 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".CardQuizActivity"
+            android:name=".SplashAct"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!--<activity-->
-            <!--android:name=".HistoryActivity"-->
-            <!--android:screenOrientation="portrait"/>-->
 
     </application>
 

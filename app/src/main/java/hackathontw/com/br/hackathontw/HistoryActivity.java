@@ -8,6 +8,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,10 +24,26 @@ import java.io.IOException;
 
 public class HistoryActivity extends Activity
 {
+
+    private Integer level;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                level= null;
+            } else {
+                level= extras.getInt("level");
+            }
+        } else {
+            level= (Integer) savedInstanceState.getSerializable("level");
+        }
+
+        Log.d("LEVEL", level+"");
 
         final Button btnShare = (Button) findViewById(R.id.btnShare);
         btnShare.setOnClickListener(new View.OnClickListener() {
@@ -54,15 +71,16 @@ public class HistoryActivity extends Activity
             }
         });
 
-//        final Button btnStart = (Button) findViewById(R.id.btnStart);
-//        btnStart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v)
-//            {
-//                Intent tela2 = new Intent(HistoryActivity.this, MainActivity.class);
-//                startActivity(tela2);
-//            }
-//        });
+        final Button btnStart = (Button) findViewById(R.id.btnStart);
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent quiz = new Intent(HistoryActivity.this, CardQuizActivity.class);
+                quiz.putExtra("level",level);
+                startActivity(quiz);
+            }
+        });
 
 
 //        Button showFeedbackDialog = (Button) findViewById(R.id.btnStart);
