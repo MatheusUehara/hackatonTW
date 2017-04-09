@@ -42,7 +42,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|right"
-                    android:text="Iniciar" />
+                    android:text="Iniciar"
+                    android:background="@drawable/buttonshape"
+                    android:shadowColor="#58D1B4"
+                    android:textColor="#FFFFFF"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    />
 
             </FrameLayout>
 
