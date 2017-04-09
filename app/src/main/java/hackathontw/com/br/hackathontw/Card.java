@@ -6,16 +6,24 @@ package hackathontw.com.br.hackathontw;
 
 public class Card {
     private int mResDrawableCard;
+    private String mText;
+    private boolean mAnswer;
 
-    public Card(int resDrawableCard){
+    public Card(int resDrawableCard, String text, boolean answer){
         mResDrawableCard = resDrawableCard;
+        mText = text;
+        mAnswer =  answer;
     }
 
     public int getResDrawableCard(){
         return mResDrawableCard;
     }
 
-    public void setResDrawableCard(int resDrawableCard){
-        mResDrawableCard = resDrawableCard;
+    public String getText(){
+        return mText;
+    }
+
+    public boolean getAnswer(){
+        return mAnswer;
     }
 }
