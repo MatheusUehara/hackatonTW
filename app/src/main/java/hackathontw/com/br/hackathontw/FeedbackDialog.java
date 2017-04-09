@@ -3,6 +3,7 @@ package hackathontw.com.br.hackathontw;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.media.Image;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -27,6 +28,7 @@ public class FeedbackDialog extends Dialog {
         TextView customTitle = (TextView) this.findViewById(R.id.customTitle);
         ImageView image = (ImageView) this.findViewById(R.id.image);
         LinearLayout dialogPanel = (LinearLayout) this.findViewById(R.id.dialogPanel);
+
         if(isCorrectAnswer) {
             customTitle.setText(context.getResources().getString(R.string.feedback_success));
 
@@ -46,7 +48,7 @@ public class FeedbackDialog extends Dialog {
         //TextView content = (TextView) this.findViewById(R.id.content);
         //content.setText("lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum.");
 
-        Button dialogButton = (Button) this.findViewById(R.id.dialogButtonOK);
+        ImageView dialogButton = (ImageView) this.findViewById(R.id.dialogButtonOK);
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

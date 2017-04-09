@@ -1,6 +1,7 @@
 package hackathontw.com.br.hackathontw;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,7 +19,7 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
     private Integer avatar = 0;
     private EditText nome;
     private ImageView cachorineo , gatineo;
-    private Button cadastrar;
+    private ImageView cadastrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
         nome = (EditText) findViewById(R.id.nomeValue);
         cachorineo = (ImageView) findViewById(R.id.cachorineo);
         gatineo = (ImageView) findViewById(R.id.gatineo);
-        cadastrar = (Button) findViewById(R.id.cadastrar);
+        cadastrar = (ImageView) findViewById(R.id.cadastrar);
 
         cachorineo.setOnClickListener(this);
         gatineo.setOnClickListener(this);

@@ -3,6 +3,7 @@ package hackathontw.com.br.hackathontw;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -38,31 +39,40 @@ public class EndStageDialog extends Dialog {
             stars.setImageResource(R.drawable.three_stars);
         }
 
-        Button dialogButtonAgain = (Button) this.findViewById(R.id.dialogButtonAgain);
+        Level levelAtual = Session.getUsuarioLogado().getLevels().get(level - 1);
+        Level proximoLevel = Session.getUsuarioLogado().getLevels().get(level);
+
+        Log.d("ATUAL SCORE", levelAtual.getScore() +" vai virar " + score );
+        if (score > levelAtual.getScore() ) {
+            levelAtual.setScore(score);
+            Session.getUsuarioLogado().getLevels().set(level - 1, levelAtual);
+        }
+
+        //Verifica se o próximo nível está desbloqueado para poder modifica-lo
+        if (proximoLevel.getLocked() && score > 0) {
+            proximoLevel.setLocked(false);
+            Session.getUsuarioLogado().getLevels().set(level, proximoLevel);
+        }
+
+        SharedPrefManager.getInstance(getContext()).saveUserInSharedPref(Session.getUsuarioLogado());
+
+        ImageView dialogButtonAgain = (ImageView) this.findViewById(R.id.dialogButtonAgain);
         dialogButtonAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent menu = new Intent(context, HistoryActivity.class);
+
                 menu.putExtra("level", level);
+                menu.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 context.startActivity(menu);
             }
         });
 
-        Button dialogButton = (Button) this.findViewById(R.id.dialogButtonOK);
+        ImageView dialogButton = (ImageView) this.findViewById(R.id.dialogButtonOK);
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Level novoScore = new Level(level-1, score, false);
-                Session.getUsuarioLogado().getLevels().set(level-1, novoScore);
-
-                //Verifica se o próximo nível está bloqueado...
-                if (Session.getUsuarioLogado().getLevels().get(level).getLocked() && score > 0) {
-                    Level novoLevel = new Level(level, 0, false);
-                    Session.getUsuarioLogado().getLevels().set(level, novoLevel);
-                }
-
-                SharedPrefManager.getInstance(getContext()).saveUserInSharedPref(Session.getUsuarioLogado());
                 Intent menu = new Intent(context, MenuActivity.class);
                 menu.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 context.startActivity(menu);

@@ -16,18 +16,17 @@
             android:id="@+id/customTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:text="Fase concluída!"
             android:layout_margin="10dp"
-            />
+            android:gravity="center"
+            android:text="Fase concluída!"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imgFstStar"
@@ -42,21 +41,25 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:gravity="center"
+            android:weightSum="4">
 
-            <Button
+            <ImageView
                 android:id="@+id/dialogButtonAgain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Repetir"
-                />
+                android:layout_weight="3"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/repetir_btn" />
 
-            <Button
+
+            <ImageView
                 android:id="@+id/dialogButtonOK"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ok"
-                />
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:src="@drawable/ok_final_level_btn" />
 
         </LinearLayout>
 
