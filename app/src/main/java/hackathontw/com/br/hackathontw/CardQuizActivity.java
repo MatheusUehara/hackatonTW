@@ -54,6 +54,7 @@ public class CardQuizActivity extends AppCompatActivity {
 
             @Override
             public void onLeftCardExit(Object o) {
+                String feedBackMessage = mCardList.get(0).getFeedBackMessage();
                 mCardList.remove(0);
                 mAdapter.notifyDataSetChanged();
                 Card card = (Card) o;
@@ -62,14 +63,14 @@ public class CardQuizActivity extends AppCompatActivity {
                     if(mCardList.isEmpty()){
                         calculateStars();
                     }
-                    dialog = new FeedbackDialog(CardQuizActivity.this, false, stars, level);
+                    dialog = new FeedbackDialog(CardQuizActivity.this, false, stars, level,feedBackMessage);
                     dialog.show();
                 } else {
                     mScore += 1;
                     if(mCardList.isEmpty()){
                         calculateStars();
                     }
-                    dialog = new FeedbackDialog(CardQuizActivity.this, true, stars, level);
+                    dialog = new FeedbackDialog(CardQuizActivity.this, true, stars, level,feedBackMessage);
                     dialog.show();
                 }
                 if (mCardList.isEmpty()) {
@@ -81,6 +82,7 @@ public class CardQuizActivity extends AppCompatActivity {
 
             @Override
             public void onRightCardExit(Object o) {
+                String feedBackMessage = mCardList.get(0).getFeedBackMessage();
                 mCardList.remove(0);
                 mAdapter.notifyDataSetChanged();
                 Card card = (Card) o;
@@ -90,13 +92,13 @@ public class CardQuizActivity extends AppCompatActivity {
                     if(mCardList.isEmpty()){
                         calculateStars();
                     }
-                    dialog = new FeedbackDialog(CardQuizActivity.this, true, stars, level);
+                    dialog = new FeedbackDialog(CardQuizActivity.this, true, stars, level,feedBackMessage);
                     dialog.show();
                 } else {
                     if(mCardList.isEmpty()){
                         calculateStars();
                     }
-                    dialog = new FeedbackDialog(CardQuizActivity.this, false, stars, level);
+                    dialog = new FeedbackDialog(CardQuizActivity.this, false, stars, level,feedBackMessage);
                     dialog.show();
                 }
                 if (mCardList.isEmpty()) {
@@ -147,19 +149,19 @@ public class CardQuizActivity extends AppCompatActivity {
 
         switch (level) {
             case 1:
-                mCardList.add(new Card(R.drawable.desafio1_card1, "Meninas não podem brincar com brinquedos de meninos!", false));
-                mCardList.add(new Card(R.drawable.desafio1_card2, "Meninos e meninas não podem gostas das mesmas coisas!", false));
-                mCardList.add(new Card(R.drawable.desafio1_card3, "Meninas podem gostar de azul!", true));
-                mCardList.add(new Card(R.drawable.desafio1_card4, "Meninas podem jogar bola!", true));
-                mCardList.add(new Card(R.drawable.desafio1_card5, "Meninos podem brincar com bonecas!", true));
-                mCardList.add(new Card(R.drawable.desafio1_card6, "Meninos podem brincar com coisas de meninas e vice-versa!", true));
+                mCardList.add(new Card(R.drawable.desafio1_card1, "Meninas não podem brincar com brinquedos de meninos!", false, "Opa você errou! As meninas podem brincar com os brinquedos de meninos, assim como meninos podem brincar com brinquedos de meninas."));
+                mCardList.add(new Card(R.drawable.desafio1_card2, "Meninos e meninas não podem gostas das mesmas coisas!", false, "Opa você errou! Meninos e meninas podem sim gostar das mesmas coisas!"));
+                mCardList.add(new Card(R.drawable.desafio1_card3, "Meninas podem gostar de azul!", true, "As meninas podem gostar de qualquer cor que quiserem, inclusive a cor azul!"));
+                mCardList.add(new Card(R.drawable.desafio1_card4, "Meninas podem jogar bola!", true,"As meninas podem praticar qualquer esporte, inclusive jogar bola!"));
+                mCardList.add(new Card(R.drawable.desafio1_card5, "Meninos podem brincar com bonecas!", true, "Meninos podem brincar com qualquer brinquedo que eles queiram, inclusive bonecas."));
+                mCardList.add(new Card(R.drawable.desafio1_card6, "Meninos podem brincar com coisas de meninas e vice-versa!", true, "Meninos e meninas podem sim brincar com qualquer coisa que eles queiram."));
                 break;
             case 2:
-                mCardList.add(new Card(R.drawable.desafio2_card1, "Mulheres não podem assumir cargos importantes!", false));
-                mCardList.add(new Card(R.drawable.desafio2_card2, "Mulheres são incapazes de executar certas tarefas!", false));
-                mCardList.add(new Card(R.drawable.desafio2_card3, "Mulheres podem preencher cargos altos, perigosos e complicados!", true));
-                mCardList.add(new Card(R.drawable.desafio2_card4, "Mulheres estão participando do mercado de trabalho.", true));
-                mCardList.add(new Card(R.drawable.desafio2_card5, "As mulheres podem ser o que quiserem, mas os homens não.", false));
+                mCardList.add(new Card(R.drawable.desafio2_card1, "Mulheres não podem assumir cargos importantes!", false, "Ihh você errou! As mulheres podem e são capazes de assumir qualquer tipo de cargo!"));
+                mCardList.add(new Card(R.drawable.desafio2_card2, "Mulheres são incapazes de executar certas tarefas!", false, "Ihh você errou! As mulheres podem executar qualquer tipo de tarefa, basta elas quererem!"));
+                mCardList.add(new Card(R.drawable.desafio2_card3, "Mulheres podem preencher cargos altos, perigosos e complicados!", true, "Mulheres podem  preencher qualquer tipo de cargos que elas desejem."));
+                mCardList.add(new Card(R.drawable.desafio2_card4, "Mulheres estão participando do mercado de trabalho.", true, "As mulheres estão cada vez participando mais do mercado de trabalho."));
+                mCardList.add(new Card(R.drawable.desafio2_card5, "As mulheres podem ser o que quiserem, mas os homens não.", false, "Ihh você errou! Assim como as mulheres os homens pode ser o que desejarem ser!"));
                 break;
             default:
                 break;

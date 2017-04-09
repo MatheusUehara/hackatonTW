@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+/**
+ * Created by Uehara on 08/04/2017.
+ */
 public class CadastroActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Integer avatar = 0;

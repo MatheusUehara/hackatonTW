@@ -56,8 +56,11 @@ public class EndStageDialog extends Dialog {
                 Level novoScore = new Level(level-1, score, false);
                 Session.getUsuarioLogado().getLevels().set(level-1, novoScore);
 
-                Level novoLevel = new Level(level,0,false);
-                Session.getUsuarioLogado().getLevels().set(level, novoLevel);
+                //Verifica se o próximo nível está bloqueado...
+                if (Session.getUsuarioLogado().getLevels().get(level).getLocked() && score > 0) {
+                    Level novoLevel = new Level(level, 0, false);
+                    Session.getUsuarioLogado().getLevels().set(level, novoLevel);
+                }
 
                 SharedPrefManager.getInstance(getContext()).saveUserInSharedPref(Session.getUsuarioLogado());
                 Intent menu = new Intent(context, MenuActivity.class);

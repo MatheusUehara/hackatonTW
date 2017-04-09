@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 public class FeedbackDialog extends Dialog {
 
-    public FeedbackDialog(final Context context, boolean isCorrectAnswer, final int stars, final int currentLevel)
+    public FeedbackDialog(final Context context, boolean isCorrectAnswer, final int stars, final int currentLevel, final String feedBackMessage)
     {
         super(context);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -36,14 +36,15 @@ public class FeedbackDialog extends Dialog {
         }
         else {
             customTitle.setText(context.getResources().getString(R.string.feedback_fail));
-
             image.setImageResource(R.drawable.icone_nop);
 
             dialogPanel.setBackgroundResource(R.color.colorWrongAnswer);
+            TextView content = (TextView) this.findViewById(R.id.content);
+            content.setText(feedBackMessage);
         }
 
-        TextView content = (TextView) this.findViewById(R.id.content);
-        content.setText("lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum.");
+        //TextView content = (TextView) this.findViewById(R.id.content);
+        //content.setText("lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum.");
 
         Button dialogButton = (Button) this.findViewById(R.id.dialogButtonOK);
         dialogButton.setOnClickListener(new View.OnClickListener() {
